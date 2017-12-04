@@ -13,22 +13,40 @@ Index in a database is like an index in back of book.
 Redundancy is the phenomena or idea of storing of data twice.
 ```
 -----
-###### Log into mysql
+##### Log into mysql
 
 ```mysql -u root -p
 
 Then type your mysql password
 ```
 -----
-###### Show databases using command line
-
+##### Show databases using command line
+```
 SHOW DATABASES;
-
-###### Change data
+```
+##### Change database 
+```
 USE <database_name>
-
-###### Show tables
+```
+##### Show tables 
+```
 SHOW TABLES;
-
-###### Showing table structure
+```
+##### Showing table structure
+```
 SHOW COLUMNS FROM <table_name>;
+```
+##### Create Database
+```
+CREATE DATABASE <database_name>
+```
+##### Delete Databases
+```
+DROP DATABASE <database_name>
+```
+##### Use Database
+```
+USE DATABASE <database_name>
+
+We must use this command before creating a new table in a database
+```
