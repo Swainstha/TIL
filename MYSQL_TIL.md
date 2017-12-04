@@ -163,6 +163,24 @@ SELECT var_name1, var_name2 WHERE var_name3 LIKE 'valu%';
 
 SELECT team_id, team_name WHERE team_captain LIKE 'Swa%';
 ```
+##### Using Regex
+```
+^   matches beginning of the string.
+$   matches pattern at the end of the string.
+.   Any single character
+[...]   Any character listd between the square brackets.
+[^]   Any character not listed between the square brackets.
+p1|p2|p3  Matches any pattern p1, p2, p3
+*   zero or more instances of preceding element
++   one or more instances of preceding element
+{n}   n instances of preceding element
+{m, n}  m through n instances of preceding element
+```
+```
+SELECT var_name1 FROM table_name WHERE REGEXP '^L';
+
+
+```
 
 
 
