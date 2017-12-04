@@ -60,7 +60,7 @@ We must use this command before creating a new table in a database
 ##### Creating a Table
 ```
 CREATE TABLE <table_name> (
-column_name(feature_name) data_type if_must_be_filled(NULL or NOT NULL) AUTO_INCREMENT(For IDs),
+column_name(feature_name) data_type if_must_be_filled(NULL or NOT NULL) AUTO_INCREMENT(For IDs) DEFAULT default_value,
 PRIMARY_KEY(id_var)
 );
 
@@ -165,22 +165,45 @@ SELECT team_id, team_name WHERE team_captain LIKE 'Swa%';
 ```
 ##### Using Regex
 ```
-^   matches beginning of the string.
-$   matches pattern at the end of the string.
-.   Any single character
+^       matches beginning of the string.
+$       matches pattern at the end of the string.
+.       Any single character
 [...]   Any character listd between the square brackets.
-[^]   Any character not listed between the square brackets.
+[^]     Any character not listed between the square brackets.
 p1|p2|p3  Matches any pattern p1, p2, p3
-*   zero or more instances of preceding element
-+   one or more instances of preceding element
-{n}   n instances of preceding element
+*       zero or more instances of preceding element
++       one or more instances of preceding element
+{n}     n instances of preceding element
 {m, n}  m through n instances of preceding element
 ```
 ```
 SELECT var_name1 FROM table_name WHERE REGEXP '^L';
-
-
 ```
+
+##### Alter table
+```
+ALTER TABLE table_name DROP var_name
+
+ALTER TABLE table_name ADD var_name2 INT NOT NULL AFTER var_name1;
+
+ALTER TABLE table_name ADD var_name DATE NOT NULL FIRST; 
+
+ALTER TABLE table_name MODIFY var_name VARCHAR(10);
+
+ALTER TABLE table_name1 RENAME TO table_name2;
+
+ALTER TABLE table_name ADD PRIMARY KEY (column_list);
+
+ALTER TABLE table_name ADD UNIQUE index_name (column_list);
+
+ALTER TABLE table_name ADD INDEX index_name (column_list);
+```
+
+##### Creating index
+```
+CREATE INDEX index_name ON table_name (column1, column2);
+
+
 
 
 
