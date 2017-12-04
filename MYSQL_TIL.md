@@ -1,6 +1,6 @@
 # December 4, 2017
 
-###### Terminologies
+##### Terminologies
 ```
 Primary key is a unique key value and should anot occur twicw in the table - (Eg. Column)
 
@@ -92,6 +92,8 @@ SELECT * FROM <table_name>;
 SELECT var_name FROM <table_name> [WHERE condition that the data must satisfy]
 
 SELECT team_name FROM team_tbl WHERE team_captain="Swain Shrestha";
+
+Upper case and lower case do not matter by default.
 ```
 
 ##### Comparision Operators
@@ -107,8 +109,28 @@ AND OR NOT
 ##### Comparion for Special character like NULL
 ```
 IS
+
+SELECT team_name FROM team_tbl WHERE tteam_captain IS NULL;
+```
+
+##### Extract year from Date
+```
+YEAR(NOW());    YEAR(2052-03-10);
+```
+
+##### Ordering the table elements
+```
+SELECT * FROM <table_name> ORDER BY <var_name> ASC/DESC LIMIT <no_of_elements_t display>;
+
+SELECT * FROM team_tbl ORDER BY establishment_date ASC LIMIT 1;
+```
+##### Using GROUP BY
+```
+if the table consists of two captains with the same name but with different team names the GROUP BY will show only one person's name.
+
+SELECT * FROM <table_name> GROUP_BY <var_name> ORDER BY <var_name2> ASC;
+
+SELECT * FROM team_tbl GROUP BY team_captain ORDER BY team_name ASC;
 ```
 
 
-
-```
