@@ -132,5 +132,37 @@ SELECT * FROM <table_name> GROUP_BY <var_name> ORDER BY <var_name2> ASC;
 
 SELECT * FROM team_tbl GROUP BY team_captain ORDER BY team_name ASC;
 ```
+##### Quering multiple tables
+```
+SELECT var_name1, var_name2 FROM table1, table2 WHERE table1.var_name3 = table1.var_name3;
+
+SELECT team_name, team_captain, result FROM team_tbl, result_tbl WHERE 
+team_tbl.team_id = result_tbl.team_id;
+```
+
+##### Deleting everything from the table
+```
+DELETE FROM <table_name>;
+```
+
+##### Deleting with condition
+```
+DELETE FROM <table_name> where var_name = something;
+
+DELETE FROm team_tbl WHERE team_id = 5;
+```
+##### Update table
+```
+UPDATE <table_name> SET field1 = new_value1, field2 = new_value2 [WHERE];
+
+UPDATE team_tbl SET team_captain = "John Subba" WHERE team_name = "Bulls";
+```
+##### using incomplete variable name to select
+```
+SELECT var_name1, var_name2 WHERE var_name3 LIKE 'valu%';
+
+SELECT team_id, team_name WHERE team_captain LIKE 'Swa%';
+```
+
 
 
