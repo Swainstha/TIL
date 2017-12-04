@@ -31,4 +31,4 @@ USE <database_name>
 SHOW TABLES;
 
 ###### Showing table structure
-SHOW COLUMNS FROM <table-name>;
+SHOW COLUMNS FROM <table_name>;
