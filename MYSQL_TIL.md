@@ -202,7 +202,13 @@ ALTER TABLE table_name ADD INDEX index_name (column_list);
 ##### Creating index
 ```
 CREATE INDEX index_name ON table_name (column1, column2);
+```
 
+##### Temporary Table
+```
+CREATE TEMPORARY TABLE ...;
+The table wont be shown using SHOW TABLES and it will vanish after logging out the session.
+```
 
 
 
