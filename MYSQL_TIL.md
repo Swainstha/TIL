@@ -15,7 +15,10 @@ Redundancy is the phenomena or idea of storing of data twice.
 -----
 ##### Log into mysql
 
-```mysql -u root -p
+```
+mysql -u root -p
+
+mysql --local-infile=1 -u root -p     //For writing and reading file permissions
 
 Then type your mysql password
 ```
@@ -210,6 +213,18 @@ CREATE TEMPORARY TABLE ...;
 The table wont be shown using SHOW TABLES and it will vanish after logging out the session.
 ```
 
+##### Tackling secure file privileges
+```
+SHOW VARIABLES LIKE "secure_file_priv";
 
+and using the same path for the file.
+```
+
+##### Write data to from table to file and load data from file to table
+```
+SELECT * FROM table_name INTO OUTFILE 'var/lib/mysql-files/file_name.txt' FIELDS TERMINATED By ',' ENCLOSED BY '"'  LINES TERMINATED BY '\n\r';
+
+LOAD DATA LOCAL INFILE 'var/lib/mysql-files/file_name.txt' INTO TABLE table_name FIELDS TERMINATED By ',' ENCLOSED BY '"'  LINES TERMINATED BY '\r';
+```
 
 
