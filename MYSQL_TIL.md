@@ -89,6 +89,7 @@ VALUES('Dronacharya', "Swain Shrestha", NOW()/'2017-12-04');
 ##### See all values of the table
 ```mysql
 SELECT * FROM <table_name>;    // * is a WildCard
+
 ```
 ##### Select specific non repeating data from a table
 ```mysql 
@@ -102,9 +103,30 @@ SELECT var_name FROM table_name LIMIT number;
 ```mysql
 SELECT var_name FROM <table_name> [WHERE condition that the data must satisfy];
 
+SELECT table_name.var_name FROM table_name;  //using fully qualified names
+
 SELECT team_name FROM team_tbl WHERE team_captain="Swain Shrestha";
 
 Upper case and lower case do not matter by default.
+```
+
+##### Select specific data using BETWEEN
+```mysql
+SELECT team_name FROM team_tbl WHERE team_id BETWEEN 1 AND 5;
+```
+
+##### Select specific data using IN
+```mysql
+SELECT team_name FROM team_tbl WHERE team_captain IN/NOT IN ('Swain','Sushil','Sajan','Shovan', 'Nischal');
+```
+
+##### Select using Wildcards
+```
+SELECT team_name FROM team_tbl WHERE team_captain LIKE 'comp%';
+
+SELECT team_name FROM team_tbl WHERE team_captain LIKE '%comp%';
+
+SELECT team_name FROM team_tbl WHERE team_captain LIKE 'h%d'; //anything starting with h and ending with d
 ```
 
 ##### Comparision Operators
@@ -131,9 +153,9 @@ YEAR(NOW());    YEAR(2052-03-10);
 
 ##### Ordering the table elements
 ```mysql
-SELECT * FROM <table_name> ORDER BY <var_name> ASC/DESC LIMIT <no_of_elements_t display>;
+SELECT * FROM <table_name> ORDER BY <var_name1>,<var_name2> ASC/DESC LIMIT <no_of_elements_t display>;
 
-SELECT * FROM team_tbl ORDER BY establishment_date ASC LIMIT 1;
+SELECT * FROM team_tbl ORDER BY establishment_date ASC LIMIT 1;  //finding lowest or highest
 ```
 ##### Using GROUP BY
 ```mysql
@@ -189,6 +211,8 @@ p1|p2|p3  Matches any pattern p1, p2, p3
 ```
 ```
 SELECT var_name1 FROM table_name WHERE REGEXP '^L';
+
+SELECT var_name FROM table_name WHERE REGEXP '[1-5] boxes of frogs';
 ```
 
 ##### Alter table
@@ -268,4 +292,64 @@ sudo /opt/lampp/lampp start
 ```
 sudo /opt/lampp/lampp stop
 ```
+##### Creating custom column
+```mysql
+SELECT CONCAT(var_name1, ',', var_name2) AS new_var_name FROM table_name;
+```
 
+##### Using Functions
+```
+SELECT name, UPPER(name) FROM table_name;
+
+SELECT cost, SQRT(cost) FROM table_name;  
+
+###### Aggregate function
+
+SELECT AVG(cost), SUM(cost) FROM table_name; 
+
+SELECT COUNT(*) AS count, SUM(cost) AS sum, MAX(cost) AS max FROM table_name WHERE team_id=1;
+```
+
+##### Using HAVING
+```mysql
+SELECT seller_id, COUNT(*) AS count FROM table_name GROUP BY seller_id HAVING COUNT(*) > 3;
+
+HAVING is used when we use GROUPs and WHERE is used when we want rows.
+
+```
+##### Using Sub-Query
+```
+SELECT name, cost FROM table_name WHERE cost >= (
+  SELECT AVG(cost) FROM table_name
+)
+ORDER BY cost DESC;
+```
+
+##### Using JOIN
+```
+//LEFT JOIN means the left table is included no matter what,forces left table tp be shown.
+
+SELECT customer.name, items.name FROM customer LEFT OUTER JOIN  
+items ON customer.id = seller_id;
+```
+
+##### Using UNION
+```
+SELECT name, cost, bids FROM table_name  WHERE bids > 100
+UNION
+SELECT name , cost, bids FROM table_name WHERE cost < 1000 ;
+
+The column names must be the same in both the queries.
+
+UNION ALL - leaves duplicate entries
+```
+
+##### Insert into multiple rows
+```
+INSERT INTO table_name(var1, var2, var3) VALUES
+(p1,q1, r1),
+(p2, q2, r2);
+
+INSERT INTO table_name(var1, var2, var3) SELECT
+
+```
