@@ -220,11 +220,31 @@ SHOW VARIABLES LIKE "secure_file_priv";
 and using the same path for the file.
 ```
 
-##### Write data to from table to file and load data from file to table
+##### Write data from table to file and load data from file to table
 ```
 SELECT * FROM table_name INTO OUTFILE 'var/lib/mysql-files/file_name.txt' FIELDS TERMINATED By ',' ENCLOSED BY '"'  LINES TERMINATED BY '\n\r';
 
 LOAD DATA LOCAL INFILE 'var/lib/mysql-files/file_name.txt' INTO TABLE table_name FIELDS TERMINATED By ',' ENCLOSED BY '"'  LINES TERMINATED BY '\r';
 ```
+##### Dump database or table to a file or from file to a database
+```
+mysqldump -u root -p db_name table_name > ~/Desktop/table_name_dump.txt
+
+mysqldump -u root -p db_name table_name < ~/Desktop/table_name_dump.txt
+
+mysqldump -u root -p db_name < ~/Desktop/db_name_dump.txt
+```
+##### MYSQLIMPORT
+```
+mysqlimport -u root -p --local db_name ~/pathname/file_name.txt
+
+mysqlimport -u root -p --local --fields-terminated-by="," --line-terminated-by="\r\n" db_name ~/pathname/file_name.txt
+```
+
+##### Import using LOAD DATA
+```
+LOAD DATA LOCAL INFILE '~/pathname/file_name.txt' INTO TABLE table_name;
+```
+-----
 
 
