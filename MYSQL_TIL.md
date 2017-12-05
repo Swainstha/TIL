@@ -68,8 +68,8 @@ PRIMARY_KEY(id_var)
 );
 
 CREATE TABLE teams_db (
-team_id INT NOT NULL AUTO_INCREMENT,
-team_name VARCHAR(100) NOT NULL,
+team_id INT NOT NULL AUTO_INCREMENT FIRST,
+team_name VARCHAR(100) NOT NULL AFTER team_id,
 PRIMARY_KEY(team_id)
 );
 ```
