@@ -370,4 +370,13 @@ SELECT * FROM table_name;
 
 View is a dynamic table for viewing purpose which gets updated whenever the original table gets updated.
 ```
+##### ACID
+```
+Atomicity - All parts of a transaction succeed or fail together.
 
+Consistency - The database will always be consistent.
+
+Isolation - No transaction can interfere with another's. Isolation brings us the benefit of hiding uncommitted state changes from the outside world, as failing transactions shouldn’t ever corrupt the state of the system.
+
+Durability - Once the transaction is committed it wont be lost. A successful transaction must permanently change the state of a system
+```
