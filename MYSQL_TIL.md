@@ -377,6 +377,23 @@ SELECT * FROM table_name;
 
 View is a dynamic table for viewing purpose which gets updated whenever the original table gets updated.
 ```
+
+##### SOlving server socket error 2002 of phpmyadmin
+```
+sudo /opt/lampp/lampp stop              
+sudo /etc/init.d/apache2 stop    
+sudo /etc/init.d/mysql stop
+
+Or, you can also type instead:
+
+sudo service apache2 stop
+sudo service mysql stop
+
+After that, we again start the lampp services:
+
+sudo /opt/lampp/lampp start
+```
+
 ##### ACID
 ```
 Atomicity - All parts of a transaction succeed or fail together.
