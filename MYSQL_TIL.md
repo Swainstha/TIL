@@ -400,7 +400,12 @@ sudo /opt/lampp/lampp start
     3. Select Modules at the left panel.
     4. Dependencies tab.
     5. '+' → JARs or directories.
-    ```
+```
+##### Drop index
+```
+DROP INDEX index_name ON tbl_name;
+```
+
 ##### ACID
 ```
 Atomicity - All parts of a transaction succeed or fail together.
