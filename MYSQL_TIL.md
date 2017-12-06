@@ -378,7 +378,7 @@ SELECT * FROM table_name;
 View is a dynamic table for viewing purpose which gets updated whenever the original table gets updated.
 ```
 
-##### SOlving server socket error 2002 of phpmyadmin
+##### Solving server socket error 2002 of phpmyadmin
 ```
 sudo /opt/lampp/lampp stop              
 sudo /etc/init.d/apache2 stop    
@@ -393,7 +393,14 @@ After that, we again start the lampp services:
 
 sudo /opt/lampp/lampp start
 ```
-
+##### Adding jar file in project in Intellij
+```
+    1. Click File from the toolbar.
+    2. Project Structure ( CTRL + SHIFT + ALT + S on Windows/Linux, ⌘ + ; on Mac OS X)
+    3. Select Modules at the left panel.
+    4. Dependencies tab.
+    5. '+' → JARs or directories.
+    ```
 ##### ACID
 ```
 Atomicity - All parts of a transaction succeed or fail together.
