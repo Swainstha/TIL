@@ -292,6 +292,13 @@ sudo /opt/lampp/lampp start
 ```
 sudo /opt/lampp/lampp stop
 ```
+##### Using terminal for apache server
+```
+Start apache command: $ sudo systemctl start apache2.service.
+stop apache command : $ sudo systemctl stop apache2.service.
+restart apache command: $ sudo systemctl restart apache2.service.
+apache2ctl command can be used to stop or start apache web server under any Linux distribution or UNIX
+```
 ##### Creating custom column
 ```mysql
 SELECT CONCAT(var_name1, ',', var_name2) AS new_var_name FROM table_name;
