@@ -182,7 +182,7 @@ DELETE FROM <table_name>;
 ```mysql
 DELETE FROM <table_name> where var_name = something;
 
-DELETE FROm team_tbl WHERE team_id = 5;
+DELETE FROM team_tbl WHERE team_id = 5;
 ```
 ##### Update table
 ```mysql
@@ -353,3 +353,21 @@ INSERT INTO table_name(var1, var2, var3) VALUES
 INSERT INTO table_name(var1, var2, var3) SELECT
 
 ```
+-----
+-----
+
+# December 5, 2017
+
+##### Rename table
+```mysql
+RENAME TABLE table_name1 TO table_name2;
+```
+
+##### Using view
+```mysql
+CREATE VIEW view_name AS
+SELECT * FROM table_name;
+
+View is a dynamic table for viewing purpose which gets updated whenever the original table gets updated.
+```
+
