@@ -171,5 +171,12 @@
         db.collection_name.dropIndexes({
             "Email":1});
 
+-----
+-----
 
+# December 11, 2017
+
+- **Displaying The required fields**
+        
+        db.stuff.find({'age':{'$lt':10}, 'score':{'$gt': 50}}, {'first_name':1,                                    'last_name':1}).sort({'salary':-1})
 
