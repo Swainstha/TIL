@@ -178,5 +178,6 @@
 
 - **Displaying The required fields**
         
-        db.stuff.find({'age':{'$lt':10}, 'score':{'$gt': 50}}, {'first_name':1,                                    'last_name':1}).sort({'salary':-1})
+        db.stuff.find({'age':{'$lt':10}, 'score':{'$gt': 50}}, {'first_name':1,
+                'last_name':1}).sort({'salary':-1})
 
