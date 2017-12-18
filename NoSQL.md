@@ -181,3 +181,6 @@
         db.stuff.find({'age':{'$lt':10}, 'score':{'$gt': 50}}, {'first_name':1,
                 'last_name':1}).sort({'salary':-1})
 
+# December 18, 2017
+- **com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Duplicate key name 'last_index'**
+- Error when there is duplicate index name.
