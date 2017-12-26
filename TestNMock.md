@@ -11,7 +11,7 @@
  > * Place test classes in the same package as implementation but in different source directories.
  
  > * Name test classes in a similar fashion as classes they test. Eg: StringCalculatorTest for StringCalculator.
- * Use descriptive names for test methods using the Given/When/Then syntax.
+ > * Use descriptive names for test methods using the Given/When/Then syntax.
 	* Eg:whenSemicolonDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers()
  
  
@@ -25,7 +25,7 @@
 >  * Rerun all tests every time implementation cide changes.
 
 >  * All test should pass before new test is written. 
-  * Refactor (improved code readability and reduced complexity) only after all tests are passing.
+>  * Refactor (improved code readability and reduced complexity) only after all tests are passing.
 
 		
 **Development Practices**
@@ -60,8 +60,10 @@
 		
 		
 	
-	
+**Different Phases of TDD**	
 
-<p><img src="/home/swain/Desktop/TDD.png " width="300" height="300"/></p>
+		
+ >
+  <p><img src="TDD.png " width="300" height="300"/></p>
 
 		
