@@ -66,6 +66,6 @@
 
 		
  >
-  <p><img src="TDD.png " width="300" height="300" hspace="20"/></p>
+  <p><img src="TDD.png " width="300" height="300" align="middle"/></p>
 
 		
