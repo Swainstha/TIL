@@ -209,6 +209,35 @@
 		 * Create an instance variable for each "column" of test data.
 		 
 		 * Create your test case(s) using the instance variables as the source of the test data.
+		 
+
+* Creating a TestNg test class
+
+	* Disable plugin for junit.
+	
+	* Click Alt+Enter in the class for which you want to create the test class.
+	
+	* Choose TestNg
+	
+	* Click Alt+Enter in @Test and import the required libraries.
+	
+	
+###  TESTNG
+
+* The order of execution is
+
+		@BeforeSuite
+		@BeforeTest
+		@BeforeClass
+		@BeforeMethod
+		@Test case 1
+		@AfterMethod
+		@BeforeMethod
+		@Test case 2
+		@AfterMethod
+		@AfterClass
+		@AfterTest
+		@AfterSuite
 		
 		 
 
