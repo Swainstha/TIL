@@ -102,6 +102,128 @@
 	* To run again, you can either hit the green "Play"-style button that appeared in the new section that popped on the bottom of your window, or you can hit the green "Play"-style button in the top bar.
 
 
+### December 27, 2017
+
+* The @Test,@Before and @After methods should be public and void.
+
+		initializationError(Practice1.EmpBusinessLogicTest): Method calculateAppraisalTest() should be public
+		
+		initializationError(Practice1.EmpBusinessLogicTest): Method calculateAppraisalTest() should be void
+		
+* The @BeforeClass and @AfterClass should be public static void.
+
+* The order in which the annotations are executed is 
+		
+		@BeforClass	- executes only once
+		@Before	- exceutes before each test method
+		@Test
+		@After	- executes after each test method
+		@AfterClass	executes only once
+
+* assertEquals(if expected= int, if actual= double, delta=0.0)
+		
+		For compatibility add delta = 0.0
+		
+* Result from failure.toString()
+
+		calculateAppraisalTest(Practice1.EmpBusinessLogicTest): expected:<5000.0> but was:<500.0>
+		
+		function_name_in_test(package_name.class_name): error
+
+* Assert methods
+	* Only failed assertions are recorded.
+
+		void assertEquals(boolean expected, boolean actual);
+		void assertTrue(boolean condition);
+		void assertFalse(boolean condition);
+		void assertNotNull(Object object);
+		void assertNull(Object object);
+		void assertSame(boolean condition);
+		void assertNotSame(boolean condition);
+		void assertArrayEquals(expectedArray, resultArray);
+		
+* Run multiple test classes
+
+	* Without creating a suite class
+
+			Result result = JUnitCore.runClasses(TestClass1.class, TestClass2.class);
+			
+	* Creating a suite class
+	
+			import org.junit.runner.RunWith;
+			import org.junit.runners.Suite;
+
+			@RunWith(Suite.class)
+
+			@Suite.SuiteClasses({
+				TestClass1.class,
+				TestClass2.class
+			})
+			public class TestSuite {
+			}
+			
+		* In main Test class
+			
+				Result result = JUnitCore.runClasses(TestSuite.class);
+		
+		
+* Using timeout
+
+	* Using timeout
+	
+			@Test(timeout = 1000)
+    			public void checkForInitialization() {}
+    			
+	* Error
+    	
+    			checkForInitialization(Practice2ForSuiteCase.TestClass1): test timed out after 1000 milliseconds
+    			
+    			
+* Test whether the code throws a desired exception or not
+
+	* Introduce the following code
+			
+			int a = 0;
+        	int b = 1 / a;
+        		
+        * if @Test(timeout = 1000,expected = ArithmeticException.class)
+        
+        		result.wasSuccessful() = true
+        		
+        * if not
+        
+        		exception : checkForInitialization(Practice2ForSuiteCase.TestClass1): / by zero
+        		result.wasSuccessful() = false
+        
+* Parameterized Test
+
+	* Allow a developer to run the same test over and over again using different values
+	* Steps
+		
+		 * Annotate test class with @RunWith(Parameterized.class).
+		 
+		 * Create a public static method annotated with @Parameters that returns a Collection of Objects (as Array) as test data set.
+		 
+		 * Create a public constructor that takes in what is equivalent to one "row" of test data.
+		 
+		 * Create an instance variable for each "column" of test data.
+		 
+		 * Create your test case(s) using the instance variables as the source of the test data.
+		
+		 
+
+    		
+
+    		
+
+    		
+
+    		
+	
+	
+   
+		
+
   
 
 		
