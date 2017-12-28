@@ -239,6 +239,66 @@
 		@AfterTest
 		@AfterSuite
 		
+* Ignoring a test
+		
+		@Test(enabled = false)
+		
+		
+### December 28, 2017
+
+* Test By Group
+
+	* The Test methods are run only once even if their groups are mentioned more than once.
+	
+	* @Test(groups = { "method_name" })
+	
+* Test Using exception
+ 	
+	* @Test(expectedExceptions = ArithmeticException.class)
+
+* Test using Dependency
+
+	* @Test (dependsOnMethods = { "testPrintMessage" })
+	
+	* @Test(dependsOnGroups = { "init.*" })
+
+* Parameterized Test
+
+	* Using xml file
+		
+		* @Parameters("myName") where myName is the name of the parameter in xml file.
+		
+		* In xml file <parameter name = "myName" value="swain"/>
+		
+	* Using DataProviders
+	
+		* @DataProvider(name = "test1")
+		
+		* @Test(dataProvider = "test1")
+		
+		* DataProvide must return object[][] or iterator<Object[]>
+		
+* Run JUnit Tests
+
+	* To execute the JUnit test cases, define the property junit="true" in the xml 
+	
+	* <!--<test name = "JUnitTests" junit="true"> -->
+	
+* Creating an xml file
+
+	* Right click on the package and make a new xml file
+	
+	* Build the project or module
+	
+	* Right click on the xml file and click "Create pathname/file.xml"
+	
+	* Right click and run the xml file
+	
+* If a test method returns false, then the test method which depends on the that test method is ignored or skipped.
+
+
+		 
+		
 		 
 
     		
