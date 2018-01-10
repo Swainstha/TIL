@@ -296,6 +296,27 @@
 	
 * If a test method returns false, then the test method which depends on the that test method is ignored or skipped.
 
+## December 31, 2017
+
+* Default JUnit test runner
+
+	* BlockJunit4Runner.class
+	
+### Mocking and Mockito
+
+* Mock means to mimic
+
+* The first step is stubbing and setting expectation
+
+* The assumption of mocking is that each unit is tested in isolation.
+
+* To create a test source directory
+
+	* create a new directory named test
+	
+	* right click and click mark directory as ->test source root.
+	
+
 
 		 
 		
