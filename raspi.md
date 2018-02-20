@@ -18,3 +18,22 @@
 
   * The ethernet with raspi zero doesnot connect
 * In network, in edit connections, in the wired connection, in ipv4 settings change method to Shared to other computers.
+
+##### Seeing devices connected to the router
+
+ * USe nutty
+ 
+       sudo apt-add-repository ppa:bablu-boy/nutty.0.1
+       
+       sudo apt-add-repository ppa:elementary-os/stable
+     
+       sudo apt-get update
+     
+       sudo apt-get install nutty
+       
+ * Remove nutty
+ 
+       sudo apt-get remove nutty
+       
+       sudo apt-add-repository --remove ppa:bablu-boy/nutty.0.1 
+     
