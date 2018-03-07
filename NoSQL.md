@@ -185,3 +185,14 @@
 - **com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Duplicate key name 'last_index'**
 - Error when there is duplicate index name.
 - But we can multiple index names on the same column name.
+
+
+* Looking for logs
+
+	/var/log/mongodb/mongod.log 
+	
+* looking for data
+
+	/var/lib/mongodb
+	
+	/etc/mongod.conf
