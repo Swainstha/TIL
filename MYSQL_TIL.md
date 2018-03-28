@@ -386,6 +386,7 @@ sudo /etc/init.d/mysql stop
 
 Or, you can also type instead:
 
+sudo /etc/init.d/apache2 stop
 sudo service apache2 stop
 sudo service mysql stop
 
