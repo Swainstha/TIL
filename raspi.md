@@ -42,3 +42,46 @@
        sudo apt-get install realvnc-vnc-server
        run the command sudo raspi-config, navigate to Advanced Options > VNC and select Yes
      
+#### Adding wifi to raspi
+
+* Check for connections
+       
+       sudo iwlist wlan0 scan
+       
+* edit the file wpa
+
+       sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+       
+* Add ssid and password
+
+       network={
+        ssid="testing"
+        psk="testingPassword"
+       }
+       
+* Add ssid with no password
+
+       network={
+        ssid="testing"
+        key_mgmt=NONE
+       }
+       
+ * Adding hidden networks
+ 
+       network={
+        ssid="yourHiddenSSID"
+        scan_ssid=1
+        psk="Your_wifi_password"
+       }
+       
+ * Add priority
+ 
+       priority = 1
+       
+ * reconfigure wlan
+ 
+        wpa_cli -i wlan0 reconfigure
+        
+ * Check if successful
+ 
+        ifconfig wlan0
