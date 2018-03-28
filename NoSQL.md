@@ -196,3 +196,9 @@
 	/var/lib/mongodb
 	
 	/etc/mongod.conf
+
+
+### Problem: Connection refused
+
+		sudo rm /var/lib/mongodb/mongod.lock
+		sudo service mongod restart
