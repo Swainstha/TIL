@@ -36,4 +36,9 @@
        sudo apt-get remove nutty
        
        sudo apt-add-repository --remove ppa:bablu-boy/nutty.0.1 
+       
+#### Installin Real VNC
+
+       sudo apt-get install realvnc-vnc-server
+       run the command sudo raspi-config, navigate to Advanced Options > VNC and select Yes
      
