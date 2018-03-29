@@ -14,3 +14,19 @@
 		
 		androidStudio is the name of the link
 
+#### 7zip
+
+* Installing
+
+		sudo apt-get install p7zip-full
+
+* Running
+
+		7z x PACKAGE.7z 
+				
+* DTRX
+
+		sudo apt-get install dtrx
+		dtrx archive.tar.XX
+
+		

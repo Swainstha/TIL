@@ -85,3 +85,18 @@
  * Check if successful
  
         ifconfig wlan0
+        
+#### Installing realvnc
+
+		sudo apt-get update
+		sudo apt-get install realvnc-vnc-server
+		sudo apt-get install realvnc-vnc-viewer
+ 
+#### Problems
+ 
+ * Adding
+ 		
+ 		iface default inet dhcp
+ 		
+ 	ethernet didnot show up
+ 
