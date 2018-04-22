@@ -29,4 +29,9 @@
 		sudo apt-get install dtrx
 		dtrx archive.tar.XX
 
+##### Starting VNC server
+
+                systemctl start vncserver-x11-serviced.service #systemd
+                /etc/init.d/vncserver-x11-serviced start #initd
+
 		
