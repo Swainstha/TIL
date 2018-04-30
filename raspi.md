@@ -99,4 +99,19 @@
  		iface default inet dhcp
  		
  	ethernet didnot show up
+ 	
+ * Internet didnot work even when connecting to wifi and (computer using lan)
+ 
+##### Solutions
+
+* Updating and upgrading
+
+		sudo apt-get update
+		sudo apt-get upgrade
+		
+* Re install the raspbian image
+
+* Dronekit will get installed despite error
+
+		XML validator failed or not found
  
