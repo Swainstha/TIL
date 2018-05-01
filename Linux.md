@@ -68,4 +68,28 @@
 		
 * Using wifi before login,these are unprivileged actions. So login and go to wifi, select edit connections and select the ssid and edit it. Go to general and tick "All users may connect to this network"
 
+#### No count down in grub for ubuntu
+
+* https://askubuntu.com/questions/483729/how-to-remove-countdown-in-grub-menu-disable-countdown
+
+* To get grub file in /etc/default/grub
+
+		sudo apt-get install grub2 grub-pc
+* Then run 
+
+		sudo update-grub
+		
+* Now open /etc/default/grub using your favourite editor.
+* And set this field to -1 to wait indefinitely!
+
+		GRUB_TIMEOUT=-1
+		
+* comment out the following two lines to
+
+		# GRUB_HIDDEN_TIMEOUT=0 
+		# GRUB_HIDDEN_TIMEOUT_QUIET=true 
+		
+* Now again run 
+		
+		sudo update-grub
 
