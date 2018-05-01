@@ -98,3 +98,9 @@
 		sudo dpkg-reconfigure grub-pc
 		
 * select the hard disk not the partition and click ok
+
+#### The system doesnot login and it goes in a loop in login.
+
+		Due to the dependency on third party drivers without disabling uefi secure boot
+		
+		So uefi secure boot should be disabled on boot up time. It comes it self at first time.
