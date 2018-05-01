@@ -42,4 +42,30 @@
                 
                 https://askubuntu.com/questions/716957/what-do-the-nomodeset-quiet-and-splash-kernel-parameters-mean
 
+#### Starting vnc server in boot time
+
+* https://stackoverflow.com/questions/7221757/run-automatically-program-on-startup-under-linux-ubuntu
+
+* create a script named vnc.sh in /etc/init/d
+
+		#!/bin/bash
+		systemctl start vncserver-x11-serviced.service
+
+* Then execute following commands
+
+		sudo chmod +x /etc/init.d/filename 
+		sudo update-rc.d filename defaults 
 		
+* There will be warning signs of insserv but they donot effect the script running
+
+* another option - search for startup applications and add
+
+		systemctl start vncserver-x11-serviced.service
+
+* In /etc/rc.local add
+
+		systemctl start vncserver-x11-serviced.service
+		
+* Using wifi before login,these are unprivileged actions. So login and go to wifi, select edit connections and select the ssid and edit it. Go to general and tick "All users may connect to this network"
+
+
