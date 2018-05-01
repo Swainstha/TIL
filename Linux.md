@@ -93,3 +93,8 @@
 		
 		sudo update-grub
 
+#### grub and dpkg error
+
+		sudo dpkg-reconfigure grub-pc
+		
+* select the hard disk not the partition and click ok
