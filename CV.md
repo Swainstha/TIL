@@ -4,8 +4,8 @@
 
 * Landing zone colors - Dark Pink, Light Blue,Black & White
 
-* Camera used - dual camera system
+* Camera used - web cam
 
 * Resolution - 640X480 pixels
 
-* Problem - During sunshine the contrast was too much.
+* Problem - During sunshine the contrast was too much. Nothing could be seen in the picture except bright light.
