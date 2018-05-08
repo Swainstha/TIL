@@ -50,4 +50,65 @@
                 
 *
 
+#### Starting vnc server in boot time
+
+* https://stackoverflow.com/questions/7221757/run-automatically-program-on-startup-under-linux-ubuntu
+
+* create a script named vnc.sh in /etc/init/d
+
+		#!/bin/bash
+		systemctl start vncserver-x11-serviced.service
+
+* Then execute following commands
+
+		sudo chmod +x /etc/init.d/filename 
+		sudo update-rc.d filename defaults 
 		
+* There will be warning signs of insserv but they donot effect the script running
+
+* another option - search for startup applications and add
+
+		systemctl start vncserver-x11-serviced.service
+
+* In /etc/rc.local add
+
+		systemctl start vncserver-x11-serviced.service
+		
+* Using wifi before login,these are unprivileged actions. So login and go to wifi, select edit connections and select the ssid and edit it. Go to general and tick "All users may connect to this network"
+
+#### No count down in grub for ubuntu
+
+* https://askubuntu.com/questions/483729/how-to-remove-countdown-in-grub-menu-disable-countdown
+
+* To get grub file in /etc/default/grub
+
+		sudo apt-get install grub2 grub-pc
+* Then run 
+
+		sudo update-grub
+		
+* Now open /etc/default/grub using your favourite editor.
+* And set this field to -1 to wait indefinitely!
+
+		GRUB_TIMEOUT=-1
+		
+* comment out the following two lines to
+
+		# GRUB_HIDDEN_TIMEOUT=0 
+		# GRUB_HIDDEN_TIMEOUT_QUIET=true 
+		
+* Now again run 
+		
+		sudo update-grub
+
+#### grub and dpkg error
+
+		sudo dpkg-reconfigure grub-pc
+		
+* select the hard disk not the partition and click ok
+
+#### The system doesnot login and it goes in a loop in login.
+
+		Due to the dependency on third party drivers without disabling uefi secure boot
+		
+		So uefi secure boot should be disabled on boot up time. It comes it self at first time.
