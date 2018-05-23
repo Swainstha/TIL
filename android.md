@@ -11,3 +11,9 @@
 	* Using handlers
 	
 		* Handler is part of the Android system's framework for managing threads.
+		
+*  Error inflating class android.support.design.widget.BottomNavigationView
+
+		Caused by: android.content.res.Resources$NotFoundException: Resource ID
+		
+		Some of the resources were in drawable-v24 only. Copy those resources to drawable folder also.
