@@ -324,7 +324,7 @@ Some useful built-in methods
 		
 		The HTML will need to have loaded before the JavaScript is run, otherwise the JavaScript will throw an error because the HTML that it is trying to select and manipulate doesn't exist (yet).
 		
-* Select and manipulate
+* Select
 
 		var body = document.querySelector("body");
 		body.style.background = "white";
@@ -344,3 +344,54 @@ Some useful built-in methods
 		var tag = document.querySelector(".className"); //returns the first one
 		
 		var tag = document.querySelector("h1 + p"); 
+		
+* Manipulate
+
+		tag.style.color = #FFAABB
+		
+	* defining a class in css and using javascript to add or remove the defined class to a html structure
+	
+			.class_name {
+				color: blue;
+				border: 10px solid red;
+			}
+			
+			var tag = document.getElementById("highight");
+			tag.classList.add("class_name");
+			
+			tag.classList.remove("class_name");
+			
+			tag.classList.toggle("class_name");
+			
+* TextContent - it only takes text
+
+		var tag = document.querySelector("p");
+		tag.textContent = "hahaha";
+		
+* InnerHTML - it takes everything including html
+
+		var tag = document.querySelector("p");
+		tag.innerHTML = "haha";
+		
+* Attributes
+
+		var link = document.querySelector("a");
+		link.getAttribute("href");
+		link.setAttribute("href","https://www.google.com")
+		
+		
+		adding https before a link tells that it is not a relative file pathor link
+		
+* Adding a listener to an element
+
+		var button = document.querySelector("button");
+		var paragraph = document.querySelector("p");
+		button.addEventListener("click", function() {
+			paragrapgh.textContent = "haha";
+		});
+		 
+		 
+		 button.addEventListener("click", changeText);
+		 function changeText() {
+		 	paragraph.textContent = "hahaha";
+		 }
