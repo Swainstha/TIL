@@ -112,3 +112,9 @@
 		Due to the dependency on third party drivers without disabling uefi secure boot
 		
 		So uefi secure boot should be disabled on boot up time. It comes it self at first time.
+
+* Displaying the specifications of the computer in ubuntu
+
+		sudo apt-get install lshw
+
+		sudo lshw -html > mySpecs.html
